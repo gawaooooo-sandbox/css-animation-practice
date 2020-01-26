@@ -14,17 +14,19 @@
   width: 480px;
   transform: translate(-50%, -50%);
   /* アニメーション */
-  animation: fadeInOut 0.5s ease-in-out 0.2s both;
+  /* animation: fadeInOut 0.5s ease-in-out 0.2s both; */
 }
 
 .logo--weak-blur {
   filter: blur(4px);
   /* 始点と終点を反転 */
-  animation-direction: reverse;
+  /* animation-direction: reverse; */
+  animation: 0.5s ease-in-out 0s 4 alternate-reverse forwards running fadeOut;
 }
 
 .logo--strong-blur {
   filter: blur(15px);
+  animation: 0.5s ease-in-out 0s 3 alternate forwards running fadeOut;
 }
 
 @keyframes fadeInOut {
@@ -34,6 +36,15 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
   }
 }
 
