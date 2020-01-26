@@ -36,3 +36,51 @@
     opacity: 1;
   }
 }
+
+[class^="eye--"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(50% + 120px);
+}
+
+.eye--top {
+  top: 0;
+  background: linear-gradient(to bottom, black calc(100% - 120px), transparent);
+  /* アニメーション */
+  animation: eyeTop 0.6s cubic-bezier(0, 0, 0.11, 0.99) 0.2s forwards,
+    eyeTop 0.22s cubic-bezier(0, 0, 0.11, 0.99) 1.2s reverse forwards,
+    eyeTop 0.22s cubic-bezier(0, 0, 0.11, 0.99) 1.42s forwards,
+    eyeTop 0.38s cubic-bezier(0, 0, 0.11, 0.99) 6.2s reverse forwards,
+    eyeTop 0.5s cubic-bezier(0, 0, 0.11, 0.99) 6.58s forwards;
+}
+
+.eye--bottom {
+  bottom: 0;
+  background: linear-gradient(to top, black calc(100% - 120px), transparent);
+  /* アニメーション */
+  animation: eyeBottom 0.6s cubic-bezier(0, 0, 0.11, 0.99) 0.2s forwards,
+    eyeBottom 0.22s cubic-bezier(0, 0, 0.11, 0.99) 1.2s reverse forwards,
+    eyeBottom 0.22s cubic-bezier(0, 0, 0.11, 0.99) 1.42s forwards,
+    eyeBottom 0.38s cubic-bezier(0, 0, 0.11, 0.99) 6.2s reverse forwards,
+    eyeBottom 0.5s cubic-bezier(0, 0, 0.11, 0.99) 6.58s forwards;
+}
+
+@keyframes eyeTop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-101%);
+  }
+}
+
+@keyframes eyeBottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(101%);
+  }
+}
