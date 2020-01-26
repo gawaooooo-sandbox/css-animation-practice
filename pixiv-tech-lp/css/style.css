@@ -1,0 +1,38 @@
+.stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+[class^="logo--"] {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  transform: translate(-50%, -50%);
+  /* アニメーション */
+  animation: fadeInOut 0.5s ease-in-out 0.2s both;
+}
+
+.logo--weak-blur {
+  filter: blur(4px);
+  /* 始点と終点を反転 */
+  animation-direction: reverse;
+}
+
+.logo--strong-blur {
+  filter: blur(15px);
+}
+
+@keyframes fadeInOut {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
